@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const pool = require("../config/db");  // ✅ pool import
 const { getCompanies, addCompany } = require("../modules/companySchema");
 
 // GET /api/companies
@@ -13,21 +14,22 @@ router.get("/companies", async (req, res) => {
 });
 
 // POST /api/companies
-// POST /api/companies
 router.post("/companies", async (req, res) => {
-  console.log("📩 POST /companies called. Body:", req.body); // ✅ Add this log
+  console.log("📩 POST /companies called. Body:", req.body);
   try {
     const newCompany = await addCompany(req.body);
     res.status(201).json(newCompany);
   } catch (err) {
-    console.log("❌ API error:", err); // ✅ पूरा error print करो
+    console.log("❌ API error:", err);
     res.status(500).json({
       message: "Server error",
-      error: err.message
+      error: err.message,
+      stack: err.stack
     });
   }
 });
 
+// ✅ Test DB Route
 router.get("/test-db", async (req, res) => {
   try {
     const result = await pool.query("SELECT NOW()");
