@@ -1,26 +1,26 @@
-// db.js
-require('dotenv').config();
-const { Pool } = require('pg');
+const { Pool, types } = require("pg");
+require("dotenv").config();
+
+// Parse NUMERIC (OID 1700) as float
+types.setTypeParser(1700, (val) => (val === null ? null : parseFloat(val)));
+// (optional) Parse BIGINT (OID 20) as int
+types.setTypeParser(20, (val) => (val === null ? null : parseInt(val, 10)));
 
 const pool = new Pool({
   host: process.env.DB_HOST,
-  port: parseInt(process.env.DB_PORT, 10) || 5432,
+  port: process.env.DB_PORT,
   database: process.env.DB_NAME,
   user: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
-  ssl: { rejectUnauthorized: false },
-  max: 5, // max 5 connections
-  idleTimeoutMillis: 30000, // 30 sec
-  connectionTimeoutMillis: 10000 // 10 sec
+  ssl: process.env.DB_SSL === "true" ? { rejectUnauthorized: false } : false,
 });
 
-// Test connection when server starts
 (async () => {
   try {
-    const res = await pool.query('SELECT NOW()');
-    console.log('✅ Database connected:', res.rows[0]);
+    const res = await pool.query("SELECT NOW()");
+    console.log("✅ Database Connected:", res.rows[0].now);
   } catch (err) {
-    console.error('❌ Database connection error:', err);
+    console.error("❌ Database Connection Error:", err.message);
   }
 })();
 

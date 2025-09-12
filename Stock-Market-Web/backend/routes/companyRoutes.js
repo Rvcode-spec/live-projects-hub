@@ -1,43 +1,72 @@
 const express = require("express");
 const router = express.Router();
-const pool = require("../config/db");  // ✅ pool import
-const { getCompanies, addCompany } = require("../modules/companySchema");
+const pool = require("../config/db"); 
+const { getCompanies, addCompany , deleteAllCompanies } = require("../modules/companySchema");
+const generateRandomData = require("../utils/generateRandomData");
 
-// GET /api/companies
+
+// GET all companies
 router.get("/companies", async (req, res) => {
   try {
     const companies = await getCompanies();
     res.json(companies);
   } catch (err) {
-    res.status(500).json({ message: "Server error", error: err.message });
+    console.error(err);
+    res.status(500).json({ message: "Server error" });
   }
 });
 
-// POST /api/companies
+router.delete("/delete", async (req, resp) => {
+  try {
+    await deleteAllCompanies();
+    resp.json({ message: "All companies deleted successfully" });
+  } catch (err) {
+    console.error("❌ Error deleting companies:", err.message);
+    resp.status(500).json({ message: "Server error", error: err.message });
+  }
+});
+
+// POST new company
 router.post("/companies", async (req, res) => {
-  console.log("📩 POST /companies called. Body:", req.body);
+  const {
+    name,
+    symbol,
+    sector,
+    current_price = 0,
+    change = 0,
+    change_percent = 0,
+    week_high = 0,
+    week_low = 0,
+    volume = "0",
+    market_cap = "0",
+    pe = 0,
+    historical_data // optional
+  } = req.body;
+
+  if (!name || !symbol || !sector) {
+    return res.status(400).json({ message: "Name, symbol, and sector are required" });
+  }
+
   try {
-    const newCompany = await addCompany(req.body);
-    res.status(201).json(newCompany);
-  } catch (err) {
-    console.log("❌ API error:", err);
-    res.status(500).json({
-      message: "Server error",
-      error: err.message,
-      stack: err.stack
+    const company = await addCompany({
+      name,
+      symbol,
+      sector,
+      current_price,
+      change,
+      change_percent,
+      week_high,
+      week_low,
+      volume,
+      market_cap,
+      pe,
+     historical_data: historical_data?.length ? historical_data : generateRandomData(365, current_price, 50)
     });
-  }
-});
 
-// ✅ Test DB Route
-router.get("/test-db", async (req, res) => {
-  try {
-    const result = await pool.query("SELECT NOW()");
-    res.json({ status: "ok", time: result.rows[0].now });
+    res.status(201).json(company);
   } catch (err) {
-    console.error("❌ DB Test Error:", err);
-    res.status(500).json({ status: "error", error: err.message });
+    console.error(err);
+    res.status(500).json({ message: "Server error" });
   }
 });
-
 module.exports = router;
