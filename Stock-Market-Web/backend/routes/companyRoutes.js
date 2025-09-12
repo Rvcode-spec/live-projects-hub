@@ -33,7 +33,7 @@ router.delete("/delete", async (req, res) => {
 });
 
 // POST new company
-router.post("/add", async (req, res) => {
+router.post("/company", async (req, res) => {
   const {
     name,
     symbol,
