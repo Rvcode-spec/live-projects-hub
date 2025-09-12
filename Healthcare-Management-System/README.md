@@ -2,7 +2,7 @@
   <img src="logo.png" alt="Hospital Management System" width="120" height="50"/>
 </p>
 
-# 🏥 Hospital Management System – Backend
+# 🏥 Healthcare Management System – Backend
 
 A robust backend for managing healthcare appointments with secure authentication, doctor–patient workflows, slot scheduling, and automated notifications.  
 All RESTful API endpoints are **implemented, tested, and verified** ensuring stability, scalability, and seamless integration.
