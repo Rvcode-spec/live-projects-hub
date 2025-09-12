@@ -1,36 +1,35 @@
-const express = require('express');
-const dotenv = require('dotenv');
+const express = require("express");
+const dotenv = require("dotenv");
 dotenv.config();
-const cors = require('cors');
-const { createCompanyTable } = require('./modules/companySchema');
+const cors = require("cors");
+const { createCompanyTable } = require("./modules/companySchema");
 
 const server = express();
 
-// ✅ Proper CORS config
+// ✅ CORS config
 const corsOptions = {
   origin: [
-    "https://stockvisionapp.netlify.app/", // frontend (production)
-    "http://localhost:3000"              // frontend (development)
+    "https://stockvisionin.netlify.app", // production frontend
+    "http://localhost:3000"              // local dev
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true, // allow cookies/auth headers
+  credentials: true,
 };
 
-// ✅ Apply CORS
 server.use(cors(corsOptions));
-server.options("/", cors(corsOptions)); // handle preflight requests
-
+server.options("/", cors(corsOptions));
 server.use(express.json());
 
-// Create table
+// ✅ Initialize DB table
 createCompanyTable();
 
-// Routes
+// ✅ Routes
 const companyRoutes = require("./routes/companyRoutes");
 server.use("/api", companyRoutes);
 
-const port = process.env.PORT;
+// ✅ Start server
+const port = process.env.PORT || 9000;
 server.listen(port, () => {
   console.log(`✅ Stock Server running on port ${port}`);
 });

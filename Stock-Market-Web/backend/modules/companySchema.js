@@ -19,7 +19,6 @@ const createCompanyTable = async () => {
       historical_data JSONB DEFAULT '[]'
     )
   `;
-
   try {
     await pool.query(query);
     console.log("✅ Companies table ready");
@@ -28,7 +27,7 @@ const createCompanyTable = async () => {
   }
 };
 
-// Add a company
+// Add company
 const addCompany = async ({
   name,
   symbol,
@@ -42,11 +41,9 @@ const addCompany = async ({
   pe = 0,
   historical_data = []
 }) => {
-  previous_close = previous_close || current_price;
-
-  const change = previous_close ? (current_price - previous_close) : 0;
+  const change = previous_close ? current_price - previous_close : 0;
   const change_percent = previous_close
-    ? ((change / previous_close) * 100).toFixed(2)
+    ? parseFloat(((change / previous_close) * 100).toFixed(2))
     : 0;
 
   const query = `
@@ -58,7 +55,6 @@ const addCompany = async ({
     VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12)
     RETURNING *
   `;
-
   const values = [
     name,
     symbol,
@@ -83,18 +79,32 @@ const addCompany = async ({
   }
 };
 
-// Generate random historical data
-const generateRandomData = (days, basePrice, variance) => {
-  const data = [];
-  for (let i = 0; i < days; i++) {
-    const price = +(basePrice + (Math.random() - 0.5) * variance).toFixed(2);
-    data.push({ day: i + 1, price });
+// Get all companies
+const getCompanies = async () => {
+  try {
+    const result = await pool.query("SELECT * FROM companies ORDER BY id");
+    return result.rows;
+  } catch (err) {
+    console.error("❌ Error fetching companies:", err.message);
+    throw err;
   }
-  return data;
+};
+
+// Delete all companies
+const deleteAllCompanies = async () => {
+  try {
+    await pool.query("DELETE FROM companies");
+    await pool.query("ALTER SEQUENCE companies_id_seq RESTART WITH 1");
+    console.log("✅ All companies deleted and sequence reset");
+  } catch (err) {
+    console.error("❌ Error deleting companies:", err.message);
+    throw err;
+  }
 };
 
 module.exports = {
   createCompanyTable,
   addCompany,
-  generateRandomData
+  getCompanies,
+  deleteAllCompanies
 };

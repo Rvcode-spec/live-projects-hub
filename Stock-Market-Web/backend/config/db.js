@@ -15,13 +15,16 @@ const pool = new Pool({
   ssl: process.env.DB_SSL === "true" ? { rejectUnauthorized: false } : false,
 });
 
-(async () => {
-  try {
-    const res = await pool.query("SELECT NOW()");
-    console.log("✅ Database Connected:", res.rows[0].now);
-  } catch (err) {
-    console.error("❌ Database Connection Error:", err.message);
-  }
-})();
+// Test connection
+pool.connect()
+  .then(client => {
+    console.log("✅ Database connected:", client.database);
+    client.release();
+  })
+  .catch(err => {
+    console.error("❌ Database connection error:", err.message);
+  });
 
 module.exports = pool;
+
+
