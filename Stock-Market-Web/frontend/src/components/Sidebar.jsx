@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { Search, Menu, X } from "lucide-react";
-import CompanyItem from "../components/CompanyItem";
+import CompanyItem from "./CompanyItem";
 import Header from "./Header";
 
-const Sidebar = ({ 
-  filteredCompanies, 
-  searchTerm, 
-  setSearchTerm, 
-  selectedCompany, 
+const Sidebar = ({
+  filteredCompanies,
+  searchTerm,
+  setSearchTerm,
+  selectedCompany,
   handleCompanySelect,
   onClose // Added for better parent control
 }) => {
@@ -56,7 +56,7 @@ const Sidebar = ({
         <h1 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
           StockVision
         </h1>
-        <button 
+        <button
           onClick={() => setIsOpen(true)}
           className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors duration-200 active:scale-95"
           aria-label="Open menu"
