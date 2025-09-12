@@ -13,12 +13,28 @@ router.get("/companies", async (req, res) => {
 });
 
 // POST /api/companies
+// POST /api/companies
 router.post("/companies", async (req, res) => {
+  console.log("📩 POST /companies called. Body:", req.body); // ✅ Add this log
   try {
-    const company = await addCompany(req.body);
-    res.status(201).json(company);
+    const newCompany = await addCompany(req.body);
+    res.status(201).json(newCompany);
   } catch (err) {
-    res.status(500).json({ message: "Server error", error: err.message });
+    console.log("❌ API error:", err); // ✅ पूरा error print करो
+    res.status(500).json({
+      message: "Server error",
+      error: err.message
+    });
+  }
+});
+
+router.get("/test-db", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT NOW()");
+    res.json({ status: "ok", time: result.rows[0].now });
+  } catch (err) {
+    console.error("❌ DB Test Error:", err);
+    res.status(500).json({ status: "error", error: err.message });
   }
 });
 
