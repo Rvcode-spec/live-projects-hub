@@ -8,14 +8,17 @@
 
 - [💻 Tech Stack](#-tech-stack)
 - [📝 Features](#-features)
-- [👨‍💻 Author](#-author)
-- [🧠 Loom Videos](#-project-list)
-- [📜 License](#-license)
 - [🧠 Project List](#-project-list)
+- [👨‍💻 Author](#-author)
+- [📜 License](#-license)
 
 ---
 
 ## 💻 Tech Stack
+
+### 🌐 Frontend:
+![React](https://img.shields.io/badge/Frontend-React-blue)
+![Next.js](https://img.shields.io/badge/Frontend-Next.js-black)
 
 ### 🔙 Backend:
 ![Node.js](https://img.shields.io/badge/Backend-Node.js-brightgreen)
@@ -23,10 +26,6 @@
 ![PHP](https://img.shields.io/badge/Backend-PHP-blue)
 ![C++](https://img.shields.io/badge/Backend-C++-orange)
 ![Java](https://img.shields.io/badge/Backend-Java-lightgrey)
-
-### 🌐 Frontend:
-![React](https://img.shields.io/badge/Frontend-React-blue)
-![Next.js](https://img.shields.io/badge/Frontend-Next.js-black)
 
 ---
 
@@ -39,6 +38,24 @@
 - ![Realtime](https://img.shields.io/badge/Realtime-Sockets%20%26%20Polling-critical) **Real-time support (Sockets, Polling)**
 
 ---
+
+
+## 📌 Projects Portfolio
+
+| # | 🗂 Project Name | 🔧 Description | 🔗 Deploy  |
+| -: | -------------- | -------------- | ---------------- |
+| 1 | [**Hospital-Management-System**] | healthcare appointments with secure authentication, doctor–patient workflows, slot scheduling, and automated notifications. | (https://github.com/Rvcode-spec/Full-Stack-Solution-2025/tree/master/CodeYaan-Academy) |
+
+| 2 | [**Stock Market**]| intuitive UI, scalable backend, and effective data visualization| [https://stockvisionin.netlify.app/] |
+
+
+
+
+
+
+
+
+
 
 ## 👨‍💻 Author
 
