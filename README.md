@@ -40,22 +40,12 @@
 ---
 
 
-## 📌 Projects Portfolio
+## 📌 Projects List
 
-| # | 🗂 Project Name | 🔧 Description | 🔗 Deploy  |
+| S.No | 🗂 Project Name | 🔧 Description | 🔗 Deploy  |
 | -: | -------------- | -------------- | ---------------- |
 | 1 | [**Hospital-Management-System**] | healthcare appointments with secure authentication, doctor–patient workflows, slot scheduling, and automated notifications. | (https://github.com/Rvcode-spec/Full-Stack-Solution-2025/tree/master/CodeYaan-Academy) |
-
 | 2 | [**Stock Market**]| intuitive UI, scalable backend, and effective data visualization| [https://stockvisionin.netlify.app/] |
-
-
-
-
-
-
-
-
-
 
 ## 👨‍💻 Author
 
