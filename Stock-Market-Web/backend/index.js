@@ -9,7 +9,7 @@ const server = express();
 // ✅ Proper CORS config
 const corsOptions = {
   origin: [
-    "https://stockvisionin.netlify.app", // frontend (production)
+    "https://stockvisionapp.netlify.app/", // frontend (production)
     "http://localhost:3000"              // frontend (development)
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
