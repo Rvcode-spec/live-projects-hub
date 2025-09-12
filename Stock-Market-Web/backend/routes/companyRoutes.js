@@ -26,7 +26,7 @@ router.delete("/delete", async (req, resp) => {
 });
 
 // POST new company
-router.post("/create", async (req, res) => {
+router.post("/companies/create", async (req, res) => {
   const {
     name,
     symbol,

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const API_BASE = "https://stockvision-backend.onrender.com/api";
+export const API_BASE = "https://stockvision-backend.onrender.com/api"; // Replace with your backend URL
 
 // ✅ Get all companies
 export const fetchCompanies = async () => {
