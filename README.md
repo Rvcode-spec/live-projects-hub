@@ -1,6 +1,6 @@
-# 📦 Projects
-![Languages](https://img.shields.io/badge/code-MultiLanguage-blue)
-**A cross-technology backend development project using Node.js, NestJS, PHP, C++, and Java — designed to provide scalable and modular backend architecture, compatible with any frontend like React.js or Next.js.**
+# 🚀 Live Projects Hub  
+A collection of real-world **Backend** and **Full-Stack** projects.  
+This repo is built for hands-on practice, clean code, and industry-standard best practices. 
 
 ---
 
