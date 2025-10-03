@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --font-condiment: 'Montserrat', cursive;
+}
+
+body {
+  font-family: var(--font-Montserrat);
+}
+

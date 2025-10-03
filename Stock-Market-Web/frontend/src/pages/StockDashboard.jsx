@@ -64,7 +64,7 @@ const StockDashboard = () => {
   );
 
   return (
-    <div className="flex bg-gradient-to-br from-slate-50 to-blue-50 h-screen">
+    <div className="flex bg-gradient-to-br from-slate-500 to-blue-400 h-screen">
       <Sidebar
         companies={companies}
         filteredCompanies={filteredCompanies}
