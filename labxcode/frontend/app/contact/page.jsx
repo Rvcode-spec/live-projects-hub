@@ -55,7 +55,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="min-h-screen bg-amber-50">
+    <div className="min-h-screen bg-white">
       <div className="relative">
         {/* Header Section */}
         <div className="relative overflow-hidden top-10">

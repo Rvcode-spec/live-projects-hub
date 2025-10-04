@@ -132,10 +132,10 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-amber-50">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="relative overflow-hidden min-h-[50vh] flex items-center">
-        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="relative overflow-hidde min-h-[42vh] flex items-center">
+        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-green-800 mb-6 leading-tight">
               Our <span className="text-blue-800">Services</span>
@@ -148,9 +148,9 @@ export default function ServicesPage() {
       </div>
 
       {/* Main Services Tabs */}
-      <div className="max-w-7xl mx-auto px-4  sm:px-6 lg:px-8 py-20">
+      <div className="max-w-7xl mx-auto px-4   sm:px-4 lg:px-8 sm:py-4">
         <div className="text-center mb-16 ">
-          <h2 className="text-4xl font-bold text-blue-800 mb-2 top-8">Core Services</h2>
+          <h2 className="text-5xl font-bold text-blue-800 mb-2 top-8">Core Services</h2>
           <p className="text-xl text-gray-900">Choose the service that fits your needs</p>
         </div>
 
@@ -234,7 +234,7 @@ export default function ServicesPage() {
       </div>
 
       {/* Additional Services */}
-      <div className="bg-white/5 backdrop-blur-sm py-20">
+      <div className="bg-white/5 backdrop-blur-sm py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-blue-800 mb-6">Additional Services</h2>
@@ -256,7 +256,7 @@ export default function ServicesPage() {
       </div>
 
       {/* Process Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-blue-800 mb-6">Our Process</h2>
           <p className="text-xl text-gray-900">How we deliver exceptional results</p>
@@ -276,7 +276,7 @@ export default function ServicesPage() {
       </div>
 
       {/* Testimonials */}
-      <div className="backdrop-blur-md  py-20">
+      <div className="backdrop-blur-md  py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-blue-900 mb-6">
@@ -318,7 +318,7 @@ export default function ServicesPage() {
 
 
       {/* Stats Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 text-center">
           <div>
             <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-800 mb-2">150+</div>
@@ -340,7 +340,7 @@ export default function ServicesPage() {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-green-500 py-12 sm:py-16">
+      <div className="bg-gradient-to-r from-blue-600 to-green-500 py-12 sm:py-8">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">Ready to Start Your Project?</h2>
           <p className="text-lg sm:text-xl text-blue-100 mb-6 sm:mb-8">Let's discuss how we can help transform your business</p>

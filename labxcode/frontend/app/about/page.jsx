@@ -28,7 +28,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-amber-50">
+    <div className="min-h-screen bg-white/5  text-gray-800">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0"></div>
@@ -46,7 +46,7 @@ export default function AboutPage() {
       </div>
 
       {/* Story Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-4xl font-bold mb-6">
@@ -85,7 +85,7 @@ export default function AboutPage() {
       </div>
 
       {/* Mission Section */}
-      <div className="bg-white/5 backdrop-blur-sm py-20">
+      <div className="bg-white/5 backdrop-blur-sm py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-blue-800 mb-8">Our Mission</h2>
           <p className="text-xl text-gray-900 leading-relaxed">
@@ -95,7 +95,7 @@ export default function AboutPage() {
       </div>
 
       {/* Why Choose Us Section */}
-      <div className="   bg-gradient-to-r to-green-700/80  from-blue-900 py-20">
+      <div className="   bg-gradient-to-r to-green-700/80  from-blue-900 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-6">Why Choose LabXCode?</h2>
@@ -117,7 +117,7 @@ export default function AboutPage() {
       </div>
 
       {/* Commitment Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center">
           <h2 className="text-4xl font-bold text-blue-800 mb-8">Our Commitment</h2>
           <div className="max-w-4xl mx-auto">
@@ -139,7 +139,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-green-800 to-black blur-2xl rounded-2xl opacity-20" />
 
         {/* Foreground Content */}
-        <div className="relative max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 py-16">
+        <div className="relative max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 py-12">
           <h2 className="text-3xl font-bold text-blue-800 mb-6">
             Ready to Transform Your Digital Presence?
           </h2>

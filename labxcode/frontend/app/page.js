@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Play,  Users, Award, Clock, Star,  MessageSquare, Mail, Phone, MapPin, ChevronDown } from 'lucide-react';
+import { ArrowRight, Play, Users, Award, Clock, Star, MessageSquare, Mail, Phone, MapPin, ChevronDown } from 'lucide-react';
 import Cards from './_components/Cards';
 
 
@@ -85,10 +85,10 @@ export default function Home() {
     }, [heroSlides.length]);
 
     return (
-        <div className="min-h-screen bg-amber-50">
+        <div className="min-h-screen bg-white text-gray-900">
             {/* Hero Section */}
-            <header className="relative w-full h-screen overflow-hidden">
-                <div className="absolute inset-0 bg-amber-50"></div>
+            <header className="relative w-full h-[70vh] overflow-hidden">
+                <div className="absolute inset-0"></div>
 
                 {/* Animated Background Pattern */}
                 <div className="absolute inset-0">
@@ -98,12 +98,6 @@ export default function Home() {
                 </div>
 
                 <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 max-w-6xl mx-auto">
-                    <div className="mb-6">
-                        <span className="inline-block bg-gradient-to-r from-green-400 to-blue-500 text-transparent bg-clip-text text-lg font-semibold mb-4 animate-fade-in">
-                            🚀 Best IT Solutions Provider
-                        </span>
-                    </div>
-
                     <h1 className="text-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-slide-up">
                         {heroSlides[currentSlide].title}
                     </h1>
@@ -115,12 +109,6 @@ export default function Home() {
                     <p className="text-black text-lg sm:text-xl max-w-3xl mb-8 leading-relaxed animate-slide-up delay-300">
                         {heroSlides[currentSlide].description}
                     </p>
-
-                    <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-slide-up delay-500">
-                        <button className="bg-gradient-to-r from-green-600 to-blue-900 text-white px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 shadow-2xl">
-                            Get Started <ArrowRight className="w-5 h-5" />
-                        </button>
-                    </div>
 
                     <div className="animate-bounce">
                         <ChevronDown className="w-8 h-8 text-black" />
@@ -143,12 +131,12 @@ export default function Home() {
 
 
             {/* Stats Section */}
-            <section className="py-20 bg-white  p-6 rounded-xl backdrop-blur-sm">
+            <section className="py-20 p-6 rounded-xl backdrop-blur-sm">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                         {stats.map((stat, index) => (
                             <div key={index} className="group">
-                                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-2 group-hover:text-blue-400 transition-colors duration-300">
+                                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-2 group-hover:text-blue-800 transition-colors duration-300">
                                     {stat.number}
                                 </div>
                                 <div className="text-gray-700 text-sm sm:text-base">{stat.label}</div>
@@ -199,13 +187,13 @@ export default function Home() {
             </section>
 
             {/* Services Section */}
-            <section id="services" className="py-24 px-4 sm:px-6 lg:px-8 ">
+            <section id="services" className="py-12 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl sm:text-5xl font-bold text-green-800 mb-6">
+                    <div className="text-center mb-12">
+                        <h2 className="text-4x sm:text-5xl mb-12 font-bold text-green-800">
                             Our <span className="text-blue-900">Services</span>
                         </h2>
-                        <p className="text-xl text-gray-800 max-w-3xl mx-auto">
+                        <p className="text-lg text-gray-800 max-w-3xl mx-auto mb-6">
                             Comprehensive digital solutions to transform your business and drive growth in the digital age
                         </p>
                     </div>
@@ -213,8 +201,9 @@ export default function Home() {
                 </div>
             </section>
 
+
             {/* Testimonials Section */}
-            <section className="py-24 px-4 sm:px-6 lg:px-8">
+            <section className="py-12  px-4 sm:px-6 lg:px-8">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-bold text-green-800 mb-6">What Our Clients Say</h2>
@@ -240,7 +229,7 @@ export default function Home() {
                 </div>
             </section>
 
-           
+
 
             {/* CTA Section */}
             <section className="bg-gradient-to-r from-blue-900 to-green-600 py-16">
