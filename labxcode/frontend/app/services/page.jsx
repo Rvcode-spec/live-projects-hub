@@ -176,10 +176,10 @@ export default function ServicesPage() {
 
   return (
     // 🧩 Added top padding to fix header overlap issue
-    <div className="min-h-screen bg-white text-sm sm:text-base pt-24 sm:pt-28">
+    <div className="min-h-screen bg-white text-sm sm:text-base pt-16 sm:pt-20">
 
       {/* Hero Section */}
-      <section className="relative min-h-[42vh] flex items-center justify-center text-center px-4 sm:px-8">
+      <section className="relative  min-h-[22vh] flex items-center justify-center text-center px-4 sm:px-8">
         <div className="max-w-4xl">
           <h1 className="text-4xl sm:text-6xl font-bold text-green-800 mb-4">
             Our <span className="text-blue-800">Services</span>
@@ -192,9 +192,9 @@ export default function ServicesPage() {
       </section>
 
       {/* Core Services */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-5xl font-bold text-blue-800 mb-4">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="text-center mb-8 ">
+          <h2 className="text-5xl font-bold text-blue-800 mb-2">
             Core Services
           </h2>
           <p className="text-lg text-gray-800">
