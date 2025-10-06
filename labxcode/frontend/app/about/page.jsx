@@ -28,7 +28,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white/5  text-gray-800">
+    <div className="min-h-screen bg-white/5  text-gray-800 sm:text-base">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0"></div>

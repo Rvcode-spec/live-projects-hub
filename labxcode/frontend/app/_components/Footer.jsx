@@ -3,7 +3,7 @@
 export default function Footer() {
   return (
     
-    <footer className="bg-blue-950 backdrop-blur-lg text-gray-300">
+    <footer className="bg-blue-950 backdrop-blur-lg text-gray-300 sm:text-base">
   <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12">
     {/* Top Grid Section */}
     <div className="grid md:grid-cols-4 gap-10">

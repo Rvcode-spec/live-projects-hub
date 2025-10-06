@@ -85,7 +85,7 @@ export default function Home() {
     }, [heroSlides.length]);
 
     return (
-        <div className="min-h-screen bg-white text-gray-900">
+        <div className="min-h-screen bg-white text-gray-900 sm:text-base">
             {/* Hero Section */}
             <header className="relative w-full h-[70vh] overflow-hidden">
                 <div className="absolute inset-0"></div>
@@ -246,26 +246,6 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-
-            <style jsx>{`
-        @keyframes fade-in {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes slide-up {
-          from { opacity: 0; transform: translateY(30px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in {
-          animation: fade-in 0.6s ease-out;
-        }
-        .animate-slide-up {
-          animation: slide-up 0.8s ease-out;
-        }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-300 { animation-delay: 0.3s; }
-        .delay-500 { animation-delay: 0.5s; }
-      `}</style>
         </div>
     );
 }
