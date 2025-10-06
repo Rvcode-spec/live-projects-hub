@@ -85,7 +85,7 @@ export default function Home() {
     }, [heroSlides.length]);
 
     return (
-        <div className="min-h-screen bg-white text-gray-900 sm:text-base text-sm">
+        <div className="min-h-screen bg-white text-gray-900  text-base sm:text-base pt-16 sm:pt-20">
             {/* Hero Section */}
             <header className="relative w-full h-[70vh] overflow-hidden">
                 <div className="absolute inset-0"></div>
