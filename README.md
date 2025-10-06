@@ -41,18 +41,19 @@ This repo is built for hands-on practice, clean code, and industry-standard best
 
 
 ## 📌 Projects List
-
 | S.No | 🗂 Project Name | 🔧 Description | 🔗 Deploy  |
 | -: | -------------- | -------------- | ---------------- |
-|1| **Healthcare-Management-System** | healthcare appointments with secure authentication, doctor–patient workflows, slot scheduling, and automated notifications. | https://github.com/Rvcode-spec/Full-Stack-Solution-2025/tree/master/CodeYaan-Academy) |
-|2| **Stock Market**| intuitive UI, scalable backend, and effective data visualization| https://stockvisionin.netlify.app/ |
+|1| **Healthcare-Management-System** | healthcare appointments with secure authentication, doctor–patient workflows, slot scheduling, and automated notifications. | [GitHub](https://github.com/Rvcode-spec/Full-Stack-Solution-2025/tree/master/CodeYaan-Academy) |
+|2| **Stock Market**| intuitive UI, scalable backend, and effective data visualization | [Live Demo](https://stockvisionin.netlify.app/) |
+|3| **LabXCode** | IT company project: static & dynamic websites, web apps, mobile apps, UI/UX design, content correction, and digital marketing. | [Website](https://labxcode.netlify.app/) |
 
 ## 👨‍💻 Author
 
 **Ravi Shankar Singh**  
-🔗 [LinkedIn](https://www.linkedin.com/in/ravishankarsinghsde)
+📧 Email: [infowebservices2024@gmail.com](mailto:infowebservices2024@gmail.com)  
+📱 Mobile: +91 98715 85013  
+🔗 [LinkedIn](https://www.linkedin.com/in/ravishankarsinghsde/)
 ---
-
 ## 📜 License
 
 ![License](https://img.shields.io/badge/License-MIT-yellow)  
