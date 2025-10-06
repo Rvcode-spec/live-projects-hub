@@ -26,7 +26,6 @@ export default function Cards() {
       title: "UI/UX Design",
       description: "User-focused designs that convert visitors to customers with stunning visual experiences",
       features: ["User Research", "Prototyping", "Design Systems", "Accessibility"],
-
       gradient: " from-blue-900 to-green-600",
       iconColor: "bg-blue-600"
     },
@@ -41,7 +40,7 @@ export default function Cards() {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 sm:text-lg">
       {services.map((service, index) => (
         <div
           key={service.title}

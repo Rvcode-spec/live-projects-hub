@@ -7,16 +7,12 @@ import {
   Edit3,
   TrendingUp,
   Code,
-  Monitor,
   Search,
-  MessageSquare,
   ShoppingCart,
   Database,
   Cloud,
   ArrowRight,
   Check,
-  Star,
-  Users,
 } from "lucide-react";
 
 export default function ServicesPage() {
@@ -29,7 +25,7 @@ export default function ServicesPage() {
       title: "Web Development",
       subtitle: "Static & Dynamic Websites",
       description:
-        "Modern, responsive, and secure websites that drive business growth",
+        "Modern, responsive, and secure websites that drive business growth.",
       features: [
         "Responsive Design",
         "SEO Optimized",
@@ -45,7 +41,7 @@ export default function ServicesPage() {
       title: "Mobile App Development",
       subtitle: "iOS & Android Applications",
       description:
-        "Advanced mobile applications that engage users and boost your business",
+        "Advanced mobile applications that engage users and boost your business.",
       features: [
         "Cross-Platform",
         "Native Performance",
@@ -61,7 +57,7 @@ export default function ServicesPage() {
       title: "UI/UX Design",
       subtitle: "User Experience & Interface",
       description:
-        "User-focused, engaging, and visually appealing designs that convert",
+        "User-focused, engaging, and visually appealing designs that convert visitors into customers.",
       features: ["User Research", "Wireframing", "Prototyping", "Design Systems"],
       technologies: ["Figma", "Adobe XD", "Sketch", "Principle"],
       startingPrice: "₹8,000",
@@ -72,12 +68,12 @@ export default function ServicesPage() {
       title: "Digital Marketing",
       subtitle: "SEO & Social Media",
       description:
-        "Comprehensive digital marketing strategies to boost your online presence",
+        "Comprehensive digital marketing strategies to boost your online presence and reach more customers.",
       features: [
         "SEO Optimization",
-        "Social Media",
+        "Social Media Marketing",
         "Content Strategy",
-        "Analytics",
+        "Analytics & Reporting",
       ],
       technologies: ["Google Ads", "Facebook Ads", "Analytics", "SEMrush"],
       startingPrice: "₹5,000",
@@ -88,116 +84,64 @@ export default function ServicesPage() {
     {
       icon: <Code className="w-8 h-8" />,
       title: "Custom Software Development",
-      description:
-        "Tailored software solutions for your specific business needs",
+      description: "Tailored software solutions for your specific business needs.",
       price: "Starting from ₹20,000",
     },
     {
       icon: <Database className="w-8 h-8" />,
       title: "Database Management",
-      description: "Secure and efficient database design and management",
+      description: "Secure and efficient database design and management.",
       price: "Starting from ₹10,000",
     },
     {
       icon: <Cloud className="w-8 h-8" />,
       title: "Cloud Solutions",
-      description: "Cloud migration, hosting, and management services",
+      description: "Cloud migration, hosting, and management services.",
       price: "Starting from ₹12,000",
     },
     {
       icon: <Edit3 className="w-8 h-8" />,
       title: "Content Management",
-      description:
-        "Professional content creation and optimization services",
+      description: "Professional content creation and optimization services.",
       price: "Starting from ₹3,000",
     },
     {
       icon: <Search className="w-8 h-8" />,
       title: "SEO Consulting",
-      description: "Expert SEO audit and strategy development",
+      description: "Expert SEO audit and strategy development.",
       price: "Starting from ₹5,000",
     },
     {
       icon: <ShoppingCart className="w-8 h-8" />,
       title: "E-commerce Solutions",
-      description:
-        "Complete online store development and management",
+      description: "Complete online store development and management.",
       price: "Starting from ₹18,000",
     },
   ];
 
-  const processSteps = [
-    {
-      step: "01",
-      title: "Discovery & Planning",
-      description:
-        "We understand your requirements and create a detailed project roadmap",
-    },
-    {
-      step: "02",
-      title: "Design & Development",
-      description:
-        "Our team creates stunning designs and develops robust solutions",
-    },
-    {
-      step: "03",
-      title: "Testing & Optimization",
-      description:
-        "Rigorous testing ensures quality and optimal performance",
-    },
-    {
-      step: "04",
-      title: "Launch & Support",
-      description:
-        "Successful deployment with ongoing support and maintenance",
-    },
-  ];
-
-  const testimonials = [
-    {
-      name: "Rajesh Kumar",
-      company: "TechStart Solutions",
-      rating: 5,
-      text: "LabXCode transformed our digital presence completely. Their web development skills are outstanding!",
-    },
-    {
-      name: "Priya Sharma",
-      company: "Fashion Hub",
-      rating: 5,
-      text: "The mobile app they developed for us increased our sales by 300%. Highly recommended!",
-    },
-    {
-      name: "Amit Patel",
-      company: "Local Business",
-      rating: 5,
-      text: "Professional, timely, and excellent results. LabXCode is our go-to tech partner.",
-    },
-  ];
-
   return (
-    // 🧩 Added top padding to fix header overlap issue
-    <div className="min-h-screen bg-white text-sm sm:text-base pt-16 sm:pt-20">
+    // ✅ Adjusted padding to prevent header overlap
+    <div className="min-h-screen bg-white text-sm sm:text-base pt-8 sm:pt-8">
 
-      {/* Hero Section */}
-      <section className="relative  min-h-[22vh] flex items-center justify-center text-center px-4 sm:px-8">
+      {/* 🟢 Hero Section */}
+      <section className="relative min-h-[32vh] flex items-center justify-center text-center px-4 sm:px-8">
         <div className="max-w-4xl">
-          <h1 className="text-4xl sm:text-6xl font-bold text-green-800 mb-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-green-800 mb-4">
             Our <span className="text-blue-800">Services</span>
           </h1>
-          <p className="text-lg sm:text-xl text-gray-800">
-            Comprehensive digital solutions to transform your business and drive
-            growth in the digital age.
+          <p className="text-gray-700 max-w-2xl mx-auto text-lg sm:textbase leading-relaxed">
+            Comprehensive digital solutions to transform your business and drive growth in the digital age.
           </p>
         </div>
       </section>
 
-      {/* Core Services */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div className="text-center mb-8 ">
-          <h2 className="text-5xl font-bold text-blue-800 mb-2">
+      {/* 🔵 Core Services */}
+      <section className="max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+        <div className="text-center mb-10 sm:mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-blue-800 mb-3">
             Core Services
           </h2>
-          <p className="text-lg text-gray-800">
+          <p className="text-gray-700 mt-2">
             Choose the service that fits your needs
           </p>
         </div>
@@ -210,7 +154,7 @@ export default function ServicesPage() {
               onClick={() => setActiveTab(service.id)}
               className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                 activeTab === service.id
-                  ? "bg-gradient-to-r from-blue-500 to-green-700 text-white shadow-lg"
+                  ? "bg-gradient-to-r from-blue-500 to-green-700 text-white shadow-md"
                   : "bg-gray-100 text-gray-700 hover:text-blue-600"
               }`}
             >
@@ -225,7 +169,7 @@ export default function ServicesPage() {
             activeTab === service.id && (
               <div
                 key={service.id}
-                className="bg-white rounded-3xl shadow-md border border-gray-200 overflow-hidden"
+                className="bg-white rounded-3xl shadow-md border border-gray-200 overflow-hidden transition-all duration-300"
               >
                 <div className="grid lg:grid-cols-2 gap-10 p-8 sm:p-12">
                   <div>
@@ -236,14 +180,19 @@ export default function ServicesPage() {
                     <p className="text-lg text-green-800 font-medium mb-4">
                       {service.subtitle}
                     </p>
-                    <p className="text-gray-800 mb-6">{service.description}</p>
+                    <p className="text-gray-800 mb-6 leading-relaxed">
+                      {service.description}
+                    </p>
 
                     <h4 className="font-semibold text-lg mb-3 text-black">
                       Key Features:
                     </h4>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
                       {service.features.map((f, i) => (
-                        <li key={i} className="flex items-center gap-2 text-gray-800">
+                        <li
+                          key={i}
+                          className="flex items-center gap-2 text-gray-800"
+                        >
                           <Check className="text-green-500 w-5 h-5" />
                           {f}
                         </li>
@@ -278,14 +227,14 @@ export default function ServicesPage() {
         )}
       </section>
 
-      {/* Additional Services */}
-      <section className="bg-gray-50 py-16">
+      {/* 🟠 Additional Services */}
+      <section className="bg-gray-50 py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold text-blue-800 mb-6">
+          <h2 className="text-3xl sm:text-4xl font-bold text-blue-800 mb-6">
             Additional Services
           </h2>
           <p className="text-gray-700 mb-10">
-            Extended solutions for comprehensive digital transformation
+            Extended solutions for complete digital transformation
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {additionalServices.map((s, i) => (

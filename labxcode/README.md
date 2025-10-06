@@ -1,7 +1,8 @@
 # 🌐 LabXCode
 
 **Founded:** October 20, 2025  
-**Type:** IT Company  
+**Type:** IT Company 
+**Project Duration:** October 1, 2025 – October 10, 2025 
 **Mission:** Empowering businesses through innovation, technology, and creativity.
 
 ---
