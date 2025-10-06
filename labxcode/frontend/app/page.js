@@ -85,7 +85,7 @@ export default function Home() {
     }, [heroSlides.length]);
 
     return (
-        <div className="min-h-screen bg-white text-gray-900 sm:text-base">
+        <div className="min-h-screen bg-white text-gray-900 sm:text-base text-sm">
             {/* Hero Section */}
             <header className="relative w-full h-[70vh] overflow-hidden">
                 <div className="absolute inset-0"></div>
@@ -98,7 +98,7 @@ export default function Home() {
                 </div>
 
                 <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 max-w-6xl mx-auto">
-                    <h1 className="text-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-slide-up">
+                    <h1 className="text-black text-4xl sm:text-3xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight animate-slide-up">
                         {heroSlides[currentSlide].title}
                     </h1>
 
