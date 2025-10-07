@@ -51,7 +51,7 @@ export default function Navbar() {
 
       {/* Mobile Dropdown Menu */}
       {isMenuOpen && (
-        <div className="absolute top-16 left-0 w-full bg-white border-t border-gray-200 shadow-md md:hidden z-50">
+        <div className="absolute top-16 mt-4 pb-4 left-0 w-full bg-white border-t border-gray-200 shadow-md md:hidden pt-4 z-50">
           <div className="flex flex-col space-y-4 p-4">
             {links.map((link) => (
               <Link
@@ -64,12 +64,12 @@ export default function Navbar() {
               </Link>
             ))}
 
-            {/* Mobile Login & Sign Up Buttons */}
-            <div className="flex flex-col space-y-3 pt-3 border-t border-gray-100">
-              <button className="shadow-md text-gray-700 px-4 py-2 rounded-lg hover:scale-105 transition-transform duration-300">
+            {/* Mobile Login & Sign Up Buttons (Smaller width) */}
+            <div className="flex flex-col space-y-3 pt-3 border-t border-gray-100 items-center">
+              <button className="shadow-md text-gray-700 px-3 py-1.5 text-sm rounded-lg hover:scale-105 transition-transform duration-300 w-32">
                 Login
               </button>
-              <button className="shadow-md bg-gradient-to-r from-sky-500 to-purple-800 text-white px-4 py-2 rounded-lg hover:scale-105 transition-transform duration-300">
+              <button className="shadow-md bg-gradient-to-r from-sky-500 to-purple-800 text-white px-3 py-1.5 text-sm rounded-lg hover:scale-105 transition-transform duration-300 w-32">
                 Sign Up
               </button>
             </div>
@@ -78,11 +78,11 @@ export default function Navbar() {
       )}
 
       {/* Desktop Buttons */}
-      <div className="hidden md:flex space-x-8 ml-10 sm:text-lg md:text-xl font-medium">
-        <button className="shadow-md text-gray-600 px-4 py-2 rounded-lg hover:scale-105 transition-transform duration-300">
+      <div className="hidden md:flex space-x-7 ml-7 sm:text-lg md:text-xl font-medium">
+        <button className="shadow-lg text-gray-600 px-4 py-2 rounded-lg hover:scale-105 transition-transform duration-300">
           Login
         </button>
-        <button className="shadow-md bg-gradient-to-r from-sky-500 to-purple-800 text-white px-4 py-2 rounded-lg hover:scale-105 transition-transform duration-300">
+        <button className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 text-white px-3 py-2 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
           Sign Up
         </button>
       </div>
