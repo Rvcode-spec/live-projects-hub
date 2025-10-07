@@ -1,8 +1,8 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import Navbar from "./(users)/_components/Navbar";
-// import Footer from "./Footer";
+import Navbar from "../app/_components/Navbar";
+import Footer from "../app/_components/Footer";
 
 export default function ClientLayout({ children }) {
   const pathname = usePathname();
@@ -18,7 +18,7 @@ export default function ClientLayout({ children }) {
     <>
       {!shouldHideLayout && <Navbar />}
       {children}
-      {/* {!shouldHideLayout && <Footer />} */}
+      {!shouldHideLayout && <Footer />}
     </>
   );
 }
