@@ -1,39 +1,77 @@
+'use client'
+import React from "react";
+import { Code2, Menu, X } from "lucide-react";
+import Link from "next/link";
+import { useState } from "react";
 
+export default function Navbar() {
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const links = [
+    { name: "Home", href: "/" },
+    { name: "Courses", href: "/courses" },
+    { name: "Blog", href: "/blog" },
+    { name: "About", href: "about" },
+  ];
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
-
-"use client"
-import React from 'react'
-import Image from 'next/image'
-import { Video } from 'lucide-react'
-
-export default function page() {
   return (
-    <div className=' bg-amber-50 w-full min-h-screen flex items-center justify-center'>
-      <div className='min-h-screen min-w-1.5 py-24 px-10'>
-        <h1 className='text-4xl font-bold mb-2'>
-          <span className='text-blue-900'>Learning</span> Made Smart with Codeyaan
+    <nav className="bg-white border-b border-gray-200 shadow-2xl py-5 px-6 flex items-center justify-around">
+      {/* Left side - Logo */}
+      <div className="flex items-center space-x-2">
+        <div className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 p-2 rounded-lg">
+          <Code2 className="text-white w-8 h-8 md:w-10 md:h-10" />
+        </div>
+        <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-700 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300 cursor-pointer">
+          Codeyaan
         </h1>
-        <p className='text-lg mb-6'>Codeyaan is your personalized online learning platform where you can master coding, explore new technologies, and build your dream career with expert guidance.</p>
-
-        <div className='flex space-x-4 font-medium'>
-          <button className=' bg-gradient-to-b  to-blue-600 from-purple-800 text-white md:text-lg px-6 py-4  rounded-xl hover:bg-blue-800 hover:scale-105 transition'>Get Started</button>
-          <button className='bg-white text-blue-900 border border-blue-900 px-6 py-4  md:text-lg  rounded-xl hover:bg-gray-100 transition hover:scale-105  '>
-            <Video className='w-5 h-5 inline-block mr-2' />
-            Watch how it works</button>
-      </div>
       </div>
 
-      <div className='text-center min-h-screen w-2/5 py-0 px-0 '>
-        <Image src="/student.svg" width={500} height={500} alt="contactus" />
+      {/* Right side - Menu (optional) */}
+      <div className="hidden md:flex space-x-14 ml-auto text-gray-700 font-medium sm:text-lg md:text-xl ">
+        {links.map((link) => (
+          <Link key={link.name} href={link.href} className="hover:text-blue-600 hover:scale-105 transition-transform duration-300">
+            {link.name}
+          </Link>
+        ))
+        }
       </div>
-    </div>
 
-  )
+      {/* Mobile Menu Button */}
+      <div className="md:hidden ml-auto">
+        <button onClick={toggleMenu} className="text-gray-700 focus:outline-none">
+          {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="absolute top-16 left-0 w-full bg-white border-t border-gray-200 shadow-md md:hidden">
+          <div className="flex flex-col space-y-4 p-4">
+            {links.map((link) => (
+              <Link key={link.name} href={link.href} className="text-gray-700 hover:text-blue-600 hover:scale-105 transition-transform duration-300">
+                {link.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Login/Sign Up Buttons */}
+      <div className="hidden md:flex space-x-8 ml-10 sm:text-lg md:text-xl font-medium">
+        <button className="shadow-md  text-gray-600 px-4 py-2 rounded-lg hover:scale-105 transition-transform duration-300">
+        Login
+      </button>
+      <button className=" shadow-md bg-gradient-to-r from-sky-500 to-purple-800 text-white px-4 py-2 rounded-lg hover:scale-105 transition-transform duration-300">
+        Sign Up
+      </button>
+      </div>
+
+      
+    </nav>
+  );
 }
-
-
-
-
