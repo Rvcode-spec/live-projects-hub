@@ -1,77 +1,63 @@
-'use client'
-import React from "react";
-import { Code2, Menu, X } from "lucide-react";
-import Link from "next/link";
-import { useState } from "react";
+# 🚀 Codeyaan - Full Stack LMS Platform
 
-export default function Navbar() {
+Codeyaan is a **Next.js + Node.js + MongoDB** powered Learning Management System (LMS) built to manage online education with multiple user roles — **Admin**, **Staff**, and **Student**.
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+It’s a production-ready, scalable web application with authentication, dynamic dashboards, and role-based access control.
 
-  const links = [
-    { name: "Home", href: "/" },
-    { name: "Courses", href: "/courses" },
-    { name: "Blog", href: "/blog" },
-    { name: "About", href: "about" },
-  ];
+---
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+## 🧠 About Codeyaan
 
-  return (
-    <nav className="bg-white border-b border-gray-200 shadow-2xl py-5 px-6 flex items-center justify-around">
-      {/* Left side - Logo */}
-      <div className="flex items-center space-x-2">
-        <div className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 p-2 rounded-lg">
-          <Code2 className="text-white w-8 h-8 md:w-10 md:h-10" />
-        </div>
-        <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-700 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300 cursor-pointer">
-          Codeyaan
-        </h1>
-      </div>
+Codeyaan is a full-stack Learning Management System (LMS) built to simplify online education and organizational training.
+It provides a seamless platform where Admins, Staff, and Students can collaborate efficiently.
 
-      {/* Right side - Menu (optional) */}
-      <div className="hidden md:flex space-x-14 ml-auto text-gray-700 font-medium sm:text-lg md:text-xl ">
-        {links.map((link) => (
-          <Link key={link.name} href={link.href} className="hover:text-blue-600 hover:scale-105 transition-transform duration-300">
-            {link.name}
-          </Link>
-        ))
-        }
-      </div>
+Our goal is to make education management smarter, faster, and more accessible — all powered by modern web technologies.
+From interactive dashboards to real-time course updates, Codeyaan delivers a complete digital learning ecosystem.
 
-      {/* Mobile Menu Button */}
-      <div className="md:hidden ml-auto">
-        <button onClick={toggleMenu} className="text-gray-700 focus:outline-none">
-          {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
-      </div>
+--
 
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="absolute top-16 left-0 w-full bg-white border-t border-gray-200 shadow-md md:hidden">
-          <div className="flex flex-col space-y-4 p-4">
-            {links.map((link) => (
-              <Link key={link.name} href={link.href} className="text-gray-700 hover:text-blue-600 hover:scale-105 transition-transform duration-300">
-                {link.name}
-              </Link>
-            ))}
-          </div>
-        </div>
-      )}
+## 💡 Our Vision
 
-      {/* Login/Sign Up Buttons */}
-      <div className="hidden md:flex space-x-8 ml-10 sm:text-lg md:text-xl font-medium">
-        <button className="shadow-md  text-gray-600 px-4 py-2 rounded-lg hover:scale-105 transition-transform duration-300">
-        Login
-      </button>
-      <button className=" shadow-md bg-gradient-to-r from-sky-500 to-purple-800 text-white px-4 py-2 rounded-lg hover:scale-105 transition-transform duration-300">
-        Sign Up
-      </button>
-      </div>
+To revolutionize online education through innovative technology, helping institutions and learners connect effortlessly.
 
-      
-    </nav>
-  );
-}
+--
+
+## 🧩 Tech Stack
+
+### 🖥️ Frontend
+- ⚛️ **Next.js 14 (App Router)**
+- 💅 **Tailwind CSS**
+- 🎨 **ShadCN/UI Components**
+- 📱 **Responsive Design**
+- ⚡ **Framer Motion Animations**
+
+### 🧠 Backend
+- 🟢 **Node.js**
+- 🚀 **Express.js**
+- 🔒 **JWT Authentication**
+- 🧩 **RESTful APIs**
+
+### 🗄️ Database
+- 🍃 **MongoDB (Mongoose ORM)**
+
+---
+
+## 👥 User Roles
+
+| Role | Description |
+|------|--------------|
+| **Admin** | Full access — manage staff, students, and courses |
+| **Staff** | Create and manage courses, assignments, and students |
+| **Student** | Enroll in courses, submit assignments, and view grades |
+
+---
+
+## 💬 In Short
+
+“Codeyaan transforms traditional learning into a modern, interactive, and role-based digital experience.”
+
+## ⚙️ Installation
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/yourusername/codeyaan.git
