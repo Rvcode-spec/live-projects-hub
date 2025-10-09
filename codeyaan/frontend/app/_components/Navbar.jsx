@@ -2,9 +2,12 @@
 import React, { useState } from "react";
 import { Code2, Menu, X } from "lucide-react";
 import Link from "next/link";
+import Form from "./Form";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showForm, setShowForm] = useState(false);
+  const [formMode, setFormMode] = useState("login"); // "login" or "signup"
 
   const links = [
     { name: "Home", href: "/" },
@@ -13,41 +16,63 @@ export default function Navbar() {
     { name: "About", href: "/about" },
   ];
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const openForm = (mode) => {
+    setFormMode(mode);
+    setShowForm(true);
+    setIsMenuOpen(false);
   };
+  const closeForm = () => setShowForm(false);
 
   return (
-    <nav className="bg-white border-b border-gray-200 shadow-2xl py-5 px-6 flex items-center justify-around">
-      {/* Left side - Logo */}
-      <div className="flex items-center space-x-2">
-        <div className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 p-2 rounded-lg">
-          <Code2 className="text-white w-8 h-8 md:w-10 md:h-10" />
+    <>
+      <nav className="bg-white border-b border-gray-200 shadow-2xl py-5 px-6 flex items-center justify-around">
+        {/* Logo */}
+        <div className="flex items-center space-x-2">
+          <div className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 p-2 rounded-lg">
+            <Code2 className="text-white w-8 h-8 md:w-10 md:h-10" />
+          </div>
+          <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-700 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300 cursor-pointer">
+            Codeyaan
+          </h1>
         </div>
-        <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-700 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300 cursor-pointer">
-          Codeyaan
-        </h1>
-      </div>
 
-      {/* Right side - Desktop Menu */}
-      <div className="hidden md:flex space-x-14 ml-auto text-gray-700 font-medium sm:text-lg md:text-xl">
-        {links.map((link) => (
-          <Link
-            key={link.name}
-            href={link.href}
-            className="hover:text-blue-600 hover:scale-105 transition-transform duration-300"
+        {/* Desktop Menu */}
+        <div className="hidden md:flex space-x-14 ml-auto text-gray-700 font-medium sm:text-lg md:text-xl">
+          {links.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="hover:text-blue-600 hover:scale-105 transition-transform duration-300"
+            >
+              {link.name}
+            </Link>
+          ))}
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden ml-auto">
+          <button onClick={toggleMenu} className="text-gray-700 focus:outline-none">
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+
+        {/* Desktop Buttons */}
+        <div className="hidden md:flex space-x-7 ml-7 sm:text-lg md:text-xl font-medium">
+          <button
+            onClick={() => openForm("login")}
+            className="shadow-lg text-gray-600 px-4 py-2 rounded-lg hover:scale-105 transition-transform duration-300"
           >
-            {link.name}
-          </Link>
-        ))}
-      </div>
-
-      {/* Mobile Menu Button */}
-      <div className="md:hidden ml-auto">
-        <button onClick={toggleMenu} className="text-gray-700 focus:outline-none">
-          {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
-      </div>
+            Login
+          </button>
+          <button
+            onClick={() => openForm("signup")}
+            className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 text-white px-3 py-2 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+          >
+            Sign Up
+          </button>
+        </div>
+      </nav>
 
       {/* Mobile Dropdown Menu */}
       {isMenuOpen && (
@@ -64,12 +89,17 @@ export default function Navbar() {
               </Link>
             ))}
 
-            {/* Mobile Login & Sign Up Buttons (Smaller width) */}
             <div className="flex flex-col space-y-3 pt-3 border-t border-gray-100 items-center">
-              <button className="shadow-md text-gray-700 px-3 py-1.5 text-sm rounded-lg hover:scale-105 transition-transform duration-300 w-32">
+              <button
+                onClick={() => openForm("login")}
+                className="shadow-md text-gray-700 px-4 py-2 text-sm rounded-lg hover:scale-105 transition-transform duration-300 w-32"
+              >
                 Login
               </button>
-              <button className="shadow-md bg-gradient-to-r from-sky-500 to-purple-800 text-white px-3 py-1.5 text-sm rounded-lg hover:scale-105 transition-transform duration-300 w-32">
+              <button
+                onClick={() => openForm("signup")}
+                className="shadow-md bg-gradient-to-r from-sky-500 to-purple-800 text-white px-3 py-1.5 text-sm rounded-lg hover:scale-105 transition-transform duration-300 w-32"
+              >
                 Sign Up
               </button>
             </div>
@@ -77,15 +107,20 @@ export default function Navbar() {
         </div>
       )}
 
-      {/* Desktop Buttons */}
-      <div className="hidden md:flex space-x-7 ml-7 sm:text-lg md:text-xl font-medium">
-        <button className="shadow-lg text-gray-600 px-4 py-2 rounded-lg hover:scale-105 transition-transform duration-300">
-          Login
-        </button>
-        <button className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 text-white px-3 py-2 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
-          Sign Up
-        </button>
-      </div>
-    </nav>
+      {/* Form Modal */}
+      {showForm && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50">
+          <div className="bg-white p-8 rounded-2xl shadow-2xl relative w-[95%] max-w-4xl">
+            <button
+              onClick={closeForm}
+              className="absolute top-3 right-3 text-gray-500 hover:text-gray-800"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <Form initialMode={formMode} />
+          </div>
+        </div>
+      )}
+    </>
   );
 }

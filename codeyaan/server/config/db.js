@@ -1,20 +1,15 @@
-const mongodb = require('mongodb');
-mongodb.MongoClient = mongodb.MongoClient;
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+dotenv.config();
 
-const mongoConnect = (callback) => {
-  mongodb.MongoClient.connect(
-    `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_CLUSTER}.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`
-  )
-    .then((client) => {
-      console.log('Connected to MongoDB');
-      callback(client);
-    })
-    .catch((err) => {
-      console.log(err);
-      throw err;
-    });
-}
-
-module.exports = {
-  mongoConnect
+const connectDB = async () => {
+  try{
+     await mongoose.connect(process.env.MONGO_URI);
+      console.log('MongoDB connected successfully');
+    } catch (error) {
+      console.error('MongoDB connection failed:', error.message);
+      process.exit(1);
+    }
 };
+     
+module.exports = connectDB;

@@ -1,18 +1,22 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
-require('./config/db')
+const connectDB = require('./config/db');
+connectDB();
 dotenv.config();
-
+const userRoutes = require('./router/userRoute');
 
 const server = express();
 server.use(cors());
 server.use(express.json());
 
 // Sample route
-server.get('/', (req, res) => {
-    res.send('Hello World!');
+server.get('/', (req, resp) => {
+    resp.send('Hello World!');
 });
+
+server.use('/api/users', userRoutes);
+
 
 const port = process.env.PORT || 3000;
 server.listen(port, () => {

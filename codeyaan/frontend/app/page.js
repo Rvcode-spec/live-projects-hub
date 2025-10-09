@@ -4,6 +4,8 @@ import Image from 'next/image'
 import { Video } from 'lucide-react'
 
 export default function page() {
+
+
   return (
     <div className='bg-amber-50 w-full min-h-screen flex flex-col md:flex-row items-center justify-center px-4 md:px-16'>
       <div className='w-full md:min-w-1.5 py-16 md:py-20 flex flex-col justify-center'>
