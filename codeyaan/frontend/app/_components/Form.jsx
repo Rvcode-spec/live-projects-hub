@@ -38,7 +38,7 @@ export default function Form({ initialMode = "login" }) {
 
             {/* Right Side — Form */}
             <div className="w-full md:w-1/2 flex items-center justify-center">
-                <form className="flex flex-col gap-5 w-full max-w-lg bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                <form className="flex flex-col gap-5 w-full sm:max-w-sm bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
                     <h2 className="text-2xl font-bold text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                         {isSignUp ? "Create Account" : "Welcome Back"}
                     </h2>
