@@ -7,7 +7,11 @@ dotenv.config();
 const userRoutes = require('./router/userRoute');
 
 const server = express();
-server.use(cors());
+server.use(cors({
+    origin: 'http://localhost:3000', // Adjust as needed for your frontend
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
+}));
 server.use(express.json());
 
 // Sample route

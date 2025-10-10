@@ -108,15 +108,18 @@ export default function Navbar() {
       )}
 
       {/* Form Modal */}
-      {showForm && (
-  <div className="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50 p-4">
-    <div className="bg-white p-6 md:p-8 rounded-2xl shadow-2xl relative w-full max-w-md md:max-w-4xl">
+  {showForm && (
+  <div className="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50 px-4 sm:px-6">
+    <div className="relative w-full max-w-sm sm:max-w-md md:max-w-3xl bg-white p-6 sm:p-8 rounded-2xl shadow-2xl overflow-y-auto max-h-[95vh]">
+      {/* Close button */}
       <button
         onClick={closeForm}
         className="absolute top-3 right-3 text-gray-500 hover:text-gray-800"
       >
         <X className="w-6 h-6" />
       </button>
+
+      {/* Form Component */}
       <Form initialMode={formMode} />
     </div>
   </div>

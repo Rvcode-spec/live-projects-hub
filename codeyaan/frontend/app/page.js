@@ -12,8 +12,9 @@ export default function page() {
         <h1 className='text-2xl md:text-4xl lg:text-5xl font-bold mb-4 text-center md:text-left leading-tight'>
           <span className='text-blue-900'>Learning</span> Made Smart with Codeyaan
         </h1>
-        <p className='text-sm md:text-base lg:text-lg mb-6 md:mb-8 text-gray-700 text-center md:text-left max-w-xl'>
-          Codeyaan is your personalized online learning platform where you can master coding, explore new technologies, and build your dream career with expert guidance.
+        <p className="text-sm md:text-base mb-6 text-gray-600 text-center">
+          Codeyaan helps you learn, grow, and build your career in tech.
+          Log in to continue your journey or create a new account to get started!
         </p>
 
         <div className='flex flex-col sm:flex-row gap-4 font-medium justify-center md:justify-start'>
@@ -28,10 +29,10 @@ export default function page() {
       </div>
 
       <div className='w-full md:w-1/2 flex items-center justify-center py-8 md:py-0'>
-        <Image 
-          src="/student.svg" 
-          width={600} 
-          height={600} 
+        <Image
+          src="/student.svg"
+          width={600}
+          height={600}
           alt="Student with books"
           className='w-full max-w-sm md:max-w-lg object-contain'
         />
