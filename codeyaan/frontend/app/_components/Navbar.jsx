@@ -110,7 +110,7 @@ export default function Navbar() {
       {/* Form Modal */}
   {showForm && (
   <div className="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50 px-4 sm:px-6">
-    <div className="relative w-full max-w-sm sm:max-w-sm md:max-w-3xl bg-white p-6 sm:p-4 rounded-2xl shadow-2xl overflow-y-auto max-h-[95vh]">
+    <div className="relative w-full max-w-sm sm:max-w-sm md:max-w-3xl bg-white p-6 sm:p-4 rounded-2xl shadow-2xl overflow-y-auto max-h-[80vh]">
       {/* Close button */}
       <button
         onClick={closeForm}
