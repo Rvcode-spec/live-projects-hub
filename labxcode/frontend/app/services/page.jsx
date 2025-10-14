@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+
 import {
   Globe,
   Smartphone,
@@ -14,6 +15,8 @@ import {
   ArrowRight,
   Check,
 } from "lucide-react";
+
+import Link from "next/link";
 
 export default function ServicesPage() {
   const [activeTab, setActiveTab] = useState("web");
@@ -152,11 +155,10 @@ export default function ServicesPage() {
             <button
               key={service.id}
               onClick={() => setActiveTab(service.id)}
-              className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
-                activeTab === service.id
+              className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${activeTab === service.id
                   ? "bg-gradient-to-r from-blue-500 to-green-700 text-white shadow-md"
                   : "bg-gray-100 text-gray-700 hover:text-blue-600"
-              }`}
+                }`}
             >
               {service.title}
             </button>
@@ -200,7 +202,8 @@ export default function ServicesPage() {
                     </ul>
 
                     <button className="bg-gradient-to-r from-blue-500 to-green-700 text-white px-8 py-3 rounded-full font-semibold hover:scale-105 transition-all flex items-center gap-2">
-                      Get Started <ArrowRight className="w-5 h-5" />
+                      <Link href="/contact" className="flex items-center gap-2">Get Started</Link>
+                      <ArrowRight className="w-5 h-5" />
                     </button>
                   </div>
 

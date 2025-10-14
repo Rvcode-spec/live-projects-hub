@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Play, Users, Award, Clock, Star, MessageSquare, Mail, Phone, MapPin, ChevronDown } from 'lucide-react';
 import Cards from './_components/Cards';
+import Link from 'next/link';
 
 
 
@@ -161,8 +162,11 @@ export default function Home() {
                                 Our team blends creativity, technical expertise, and industry experience to deliver results that take your business beyond expectations. We don't just create IT solutions; we bring your ideas to life.
                             </p>
                             <button className="bg-gradient-to-r from-blue-900 to-green-600 text-white  px-8 py-4 rounded-full font-semibold hover:scale-105 transition-transform duration-300 flex items-center gap-2">
-                                Learn More <ArrowRight className="w-5 h-5" />
-                            </button>
+            
+                                 <Link href="/about" className="flex items-center gap-2">Learn More</Link>  <ArrowRight className="w-5 h-5" />
+                                 
+                             </button>
+                           
                         </div>
 
                         <div className="relative">
@@ -238,10 +242,11 @@ export default function Home() {
                     <p className="text-xl text-blue-100 mb-8">Join 50+ satisfied clients who trust LabXCode for their digital success</p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <button className="bg-white text-blue-800 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 hover:scale-105 transition-colors duration-300 flex items-center justify-center gap-2">
-                            <MessageSquare className="w-5 h-5" /> Start Your Project
+                            <MessageSquare className="w-5 h-5" /> 
+                            <Link href="/contact" className="flex items-center gap-2">Start Your Project</Link>
                         </button>
                         <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-green-900 transition-all duration-300">
-                            View Portfolio
+                           < Link href="//blogs" className="flex items-center gap-2">View Portfolio</Link>
                         </button>
                     </div>
                 </div>

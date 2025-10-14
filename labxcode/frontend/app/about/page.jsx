@@ -1,6 +1,6 @@
 import React from 'react';
 import { Globe, Smartphone, Palette, Edit3, TrendingUp, CheckCircle, Clock, Zap, Users } from 'lucide-react';
-
+import Link from 'next/link';
 export default function AboutPage() {
 
 
@@ -147,7 +147,8 @@ export default function AboutPage() {
             Let's build something amazing together
           </p>
           <button className="bg-white text-green-800 font-bold px-8 py-4 rounded-full font-semibold text-lg  hover:scale-105">
-            Get Started Today
+            
+            <Link href="/contact" className="flex items-center gap-2">Get Started Today</Link>
           </button>
         </div>
       </div>

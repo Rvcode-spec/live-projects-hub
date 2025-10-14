@@ -1,5 +1,6 @@
 import React from 'react'
 import { Code, Palette, Server, Smartphone, Globe, TrendingUp, ArrowRight, CheckCircle } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Cards() {
   const services = [
@@ -76,7 +77,7 @@ export default function Cards() {
             {/* Footer */}
             <div className="pt-4 border-t border-white/10">
               <button className={`w-full bg-gradient-to-r ${service.gradient} text-white py-3 px-4 rounded-full font-semibold text-sm lg:text-base hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 group-hover:shadow-xl`}>
-                Get Started
+                < Link href="/services" className="flex items-center gap-2">Get Started</Link>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
             </div>
