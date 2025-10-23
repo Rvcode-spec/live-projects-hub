@@ -1,5 +1,9 @@
-const express = require('experss');
+const express = require('express');
 const {createCourse , enroll } = require('../controllers/courseController');
-const route = express.route;
+const router = express.Router();
+const {authenticate } = require('../middlewares/auth')
 
-route.post('./')
+router.post('/courses', authenticate,  createCourse);
+router.post('/enrollment',enroll);
+
+module.exports = router;

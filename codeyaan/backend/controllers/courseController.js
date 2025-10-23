@@ -2,12 +2,12 @@ const Course = require('../models/Course');
 const Enrollment = require('../models/Enrollment');
 
 
-exports.createCourse = async (req, resp)=>{
+const createCourse = async (req, resp)=>{
     try{
 
-        const {tital, description , department , visibility } = req.body;
+        const {title, description , department , visibility } = req.body;
         const course = await Course.create({
-            tital, description , department , visibility,
+            title, description , department , visibility,
              owner: req.user._id
         })
 
@@ -19,7 +19,7 @@ exports.createCourse = async (req, resp)=>{
 };
 
 
-exports.enroll = async (req, resp,)=>{
+const enroll = async (req, resp,)=>{
     try{
 
         const exist = await Enrollment.findOne({course: req.resource._id, student: req.user._id });
@@ -32,3 +32,4 @@ exports.enroll = async (req, resp,)=>{
     }
 }
 
+module.exports = {createCourse , enroll}
