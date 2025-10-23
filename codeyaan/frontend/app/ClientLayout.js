@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import Navbar from "../app/_components/Navbar";
-import Footer from "../app/_components/Footer";
+import Footer from "./_components/Footer";
 
 export default function ClientLayout({ children }) {
   const pathname = usePathname();
