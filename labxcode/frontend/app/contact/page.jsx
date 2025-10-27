@@ -29,9 +29,9 @@ export default function ContactForm() {
     setSubmitStatus(null);
 
     try {
-      const resp = await fetch('http://127.0.0.1:8000/save_contact.php', {
+      const resp = await fetch('http://localhost:8000/api/saveContact', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify(formData)
       });
 
