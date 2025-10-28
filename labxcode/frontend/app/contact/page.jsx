@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { Send } from 'lucide-react';
+import { API_BASE_URL } from '@/api';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -29,7 +30,7 @@ export default function ContactForm() {
     setSubmitStatus(null);
 
     try {
-      const resp = await fetch('http://localhost:8000/api/saveContact', {
+      const resp = await fetch(`${API_BASE_URL}/api/saveContact`, {
         method: 'POST',
           headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify(formData)
