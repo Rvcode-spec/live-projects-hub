@@ -11,7 +11,7 @@ dbPool.connect();
 const server = express();
 
 const corsOptions = {
-  origin: 'http://localhost:3000', 
+  origin: 'https://labxcode.netlify.app/', 
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
 };
 
