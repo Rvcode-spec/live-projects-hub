@@ -13,6 +13,7 @@ const server = express();
 const corsOptions = {
   origin: 'https://labxcode.netlify.app/', 
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
 };
 
 server.use(cors(corsOptions));
